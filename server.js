@@ -16,9 +16,11 @@ app.use((req, res, next) =>  {
      console.log(`${now}:${req.method} ${req.url}`);
     next();
 });
-app.use((req, res, next) =>  {
-    res.render('maintenance.hbs');
-});
+//  Short circuit for displaying maintenane message
+// app.use((req, res, next) =>  {
+//     res.render('maintenance.hbs');
+// });
+
 app.get('/', (req, res) => {
     res.render('home.hbs',{
         pageTitle:"Home Page From HandleBar",
